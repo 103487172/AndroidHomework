@@ -7,9 +7,12 @@ fun main(){
         println("31-day month")
     if (Month in listOf(4,6,9,11))
         println("30-day month")
-    val a = Year % 4
-    if (a == 0 && Month == 2)
+    val a: Int = Year % 4
+    val b: Int = Year % 400
+    if (a == 0 && b == 0 && Month == 2)
         println("29 days")
     else if (a != 0 && Month == 2)
+        println("28 days")
+    else if (b !=0 && Month == 2)
         println("28 days")
 }
